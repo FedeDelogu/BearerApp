@@ -86,7 +86,7 @@ public class ActivityRestController {
         List<ActivityResponseDTO> activities = activityService.getFilteredActivities(name, startDate, endDate, onlyAvailable);
 
         if (activities.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Nessuna attività trovata
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(activities, HttpStatus.OK);
     }

@@ -4,15 +4,13 @@ import com.BerearApp.berear.DTO.ActivityResponseDTO;
 import com.BerearApp.berear.entity.Activity;
 import com.BerearApp.berear.repository.ActivityRepository;
 import com.BerearApp.berear.service.FiltersService;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
+//in base ai criteri richiesti restiuisce filtri diversi, nome,data,disponiiblità
 @Service
 @RequiredArgsConstructor
 public class ActivityFiltersServiceImpl implements FiltersService {

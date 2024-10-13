@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class UserServiceImpl implements UserLoginService {
+public class UserLoginServiceImpl implements UserLoginService {
 
     private final UserLoginRepository userLoginRepository;
 
@@ -27,8 +27,7 @@ public class UserServiceImpl implements UserLoginService {
             return getJwtToken(new IUser(user.get().getUserName(),
                     user.get().getFirstName(),
                     user.get().getLastName(),
-                    user.get().getPassword(),
-                    user.get().getRole()));
+                    user.get().getPassword()));
         } else
             throw new RuntimeException("Password errata");
     }
@@ -41,8 +40,8 @@ public class UserServiceImpl implements UserLoginService {
         return JWT.create()
                 .withClaim("username", iuser.getUserName())
                 .withClaim("firstName", iuser.getFirstName())
-                .withClaim("lastName", iuser.getLastName())
-                .withClaim("role", iuser.getRole());
+                .withClaim("lastName", iuser.getLastName());
+
     }
 }
 

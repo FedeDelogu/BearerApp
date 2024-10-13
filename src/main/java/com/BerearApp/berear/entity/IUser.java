@@ -27,12 +27,23 @@ public class IUser {
     private String lastName;
     private String email;
     private String password;
-    private String role;
+    private String deletedSubscription;
+
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<IUserActivity> registrations = new HashSet<>();
 
-    public IUser(String user, String name, String surname, String password, String role) {
+    public IUser(String userName, String firstName, String lastName, String password) {
 
     }
-}
+
+    public Set<Activity> getActivities() {
+        Set<Activity> activities = new HashSet<>();
+        for (IUserActivity registration : registrations) {
+            activities.add(registration.getActivity());
+        }
+        return activities;}
+
+
+
+    }
