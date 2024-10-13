@@ -21,7 +21,11 @@ La classe ActivityFiltersServiceImpl implementa l'interfaccia FiltersService e g
 La classe  centralizza la logica di business, consentendo una gestione più semplice dei filtri. Se non vengono forniti filtri, il servizio restituisce tutte le attività, garantendo un comportamento intuitivo. In questo modo, abbiamo mantenuto il codice più modulare e testabile, migliorando la manutenibilità dell'applicazione.
 
 3) Utente-attività:
-
+In questo punto ho provveduto ad implementare la classe per la login, utilizzando jwtToken.
+Ho poi implementato le opzioni di: iscriversi se loggati ad una attività, cancellarsi, vedere le attività a cui si è iscritti. Difficoltà riscontrate:
+- approfondire lo studio su autenticazione con bearer e l'utilizzo di jwt token.
+- poca autonomia nell'implementazione delle classi di questo punto, che ha richiesto una accurata ricerca.
+  
 alcuni punti aggiuntivi di riflessione sulle scelte prese:
 - pattern usato MVC
 - approccio allo svolgimento: attività divisa in sprint, con esecuzione codice e test su postman.
